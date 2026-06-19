@@ -1,0 +1,1250 @@
+/* 
+   ==========================================================================
+   ESTILO BESPOKE (DESIGN EDITORIAL) - Washington Araújo Optometria
+   Focado em quebrar layouts padronizados de templates e IA.
+   ========================================================================== 
+*/
+
+/* 1. IMPORTS & FONTES ACADÊMICAS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+    /* Paleta de Cores de Alta Costura/Clínica Premium */
+    --color-primary: #071324;        /* Azul da Noite Profundo (Quase Preto) */
+    --color-primary-light: #0d2038;  /* Azul Escuro Clínico */
+    --color-accent: #c49a45;         /* Dourado Ouro Velho (Menos amarelado, mais sofisticado) */
+    --color-accent-light: #f7eedb;   /* Dourado Muito Suave */
+    --color-accent-hover: #a37c32;   /* Dourado Escuro */
+    
+    /* Cores de Ação */
+    --color-whatsapp: #25D366;       
+    --color-whatsapp-hover: #1ebd54; 
+    
+    /* Neutros Editoriais */
+    --color-bg-light: #f3f4f6;       /* Cinza Editorial Suave */
+    --color-bg-white: #ffffff;       
+    --color-text-dark: #1f2937;      /* Grafite Escuro */
+    --color-text-muted: #6b7280;     /* Cinza Muted */
+    --color-text-light: #f9fafb;     
+    
+    /* Fontes */
+    --font-titles: 'Lora', serif;    /* Serif sofisticada, com ar acadêmico e literário */
+    --font-body: 'Inter', sans-serif;
+    
+    /* Efeitos de Transição e Bordas */
+    --border-radius-sm: 4px;         /* Cantos mais retos trazem maior seriedade */
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+    --transition-custom: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Transição suave personalizada */
+    --shadow-soft: 0 4px 30px rgba(7, 19, 36, 0.03);
+    --shadow-bespoke: 0 20px 50px -10px rgba(7, 19, 36, 0.08);
+}
+
+/* 2. RESET & ESTILOS GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-white);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titles);
+    font-weight: 500; /* Menos peso em Serif traz mais elegância */
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-custom);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Scrollbar Customizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-primary);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: var(--border-radius-sm);
+}
+
+/* Utilitários de Layout */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+.section-padding {
+    padding: 8rem 0;
+}
+
+.section-editorial {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    margin-bottom: 5rem;
+    align-items: flex-end;
+}
+
+.editorial-left {
+    border-left: 2px solid var(--color-accent);
+    padding-left: 2rem;
+}
+
+.section-subtitle {
+    font-family: var(--font-body);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.section-description {
+    color: var(--color-text-muted);
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+/* 3. BOTÕES PERSONALIZADOS */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.1rem 2.2rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: var(--border-radius-sm); /* Botões retangulares clássicos, estilo agência */
+    cursor: pointer;
+    transition: var(--transition-custom);
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--color-whatsapp);
+    color: var(--color-bg-white);
+    border: 1px solid var(--color-whatsapp);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-whatsapp);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.15);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--color-accent);
+    color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg-white);
+    transform: translateY(-2px);
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-bg-white);
+    border: 1px solid var(--color-accent);
+}
+
+.btn-accent:hover {
+    background-color: transparent;
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.btn-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--color-accent);
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.btn-text-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-accent);
+    transform: scaleX(0.3);
+    transform-origin: left;
+    transition: var(--transition-custom);
+}
+
+.btn-text-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* 4. HEADER COM BLUR PREMIUM */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition-custom);
+    padding: 2rem 0;
+    background-color: transparent;
+}
+
+.header.scrolled {
+    background-color: rgba(7, 19, 36, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(196, 154, 69, 0.15);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 157px; /* Largura proporcional para o logo (523x150px) para evitar colapso no flexbox */
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+.header:not(.scrolled) .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.header:not(.scrolled) .nav-link:hover {
+    color: var(--color-accent);
+}
+
+.header-cta .btn {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.8rem;
+    border-radius: var(--border-radius-sm);
+}
+
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.mobile-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-bg-white);
+    transition: var(--transition-custom);
+}
+
+/* 5. HERO ESTATURADA (ASSIMÉTRICA) */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    color: var(--color-bg-white);
+    padding-top: 120px;
+    padding-bottom: 5rem;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+    color: var(--color-accent);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.hero-title {
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+    color: var(--color-bg-white);
+}
+
+.hero-title span {
+    font-style: italic;
+    color: var(--color-accent);
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+.hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.hero-ctas .btn {
+    border-radius: var(--border-radius-sm);
+}
+
+.hero-ctas .btn-secondary {
+    color: var(--color-bg-white);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-ctas .btn-secondary:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+}
+
+/* Molduras de Imagem assimétricas (Hero) */
+.hero-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-main-frame {
+    position: relative;
+    width: 90%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    /* Moldura elegante fina */
+    border: 1px solid rgba(196, 154, 69, 0.3);
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.hero-main-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(15%); /* Visual de fotografia editorial */
+    transition: var(--transition-custom);
+}
+
+.hero-main-frame:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+/* Linha decorativa fina vertical estilo arquitetônico */
+.hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15%;
+    width: 1px;
+    height: 70%;
+    background-color: rgba(196, 154, 69, 0.2);
+}
+
+/* Card flutuante - simplificado para layout editorial */
+.hero-floating-card {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    background-color: var(--color-primary-light);
+    border: 1px solid rgba(196, 154, 69, 0.2);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 280px;
+    z-index: 10;
+}
+
+.hero-floating-card i {
+    font-size: 1.8rem;
+    color: var(--color-accent);
+}
+
+.hero-floating-card-text h4 {
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--color-bg-white);
+    letter-spacing: 0.5px;
+}
+
+.hero-floating-card-text p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+/* 6. SEÇÃO SOBRE (GRID EDITORIAL SOBREPOSTO) */
+.about {
+    background-color: var(--color-bg-white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+/* Collage Assimétrica de Fotos */
+.about-image-side {
+    position: relative;
+}
+
+.about-image-composition {
+    position: relative;
+    height: 520px;
+    width: 100%;
+}
+
+.about-img-main {
+    position: absolute;
+    width: 78%;
+    height: 390px;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(7, 19, 36, 0.1);
+    box-shadow: var(--shadow-bespoke);
+}
+
+.about-img-sub {
+    position: absolute;
+    width: 58%;
+    height: 260px;
+    object-fit: cover;
+    bottom: 0;
+    right: 0;
+    border: 8px solid var(--color-bg-white);
+    box-shadow: var(--shadow-bespoke);
+    z-index: 5;
+}
+
+.about-text-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-intro {
+    font-family: var(--font-titles);
+    font-size: 1.4rem;
+    color: var(--color-primary-light);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+
+/* Pilares Profissionais - Substituindo os cards repetitivos por blocos de texto diagramados */
+.about-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+}
+
+.pillar-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 1.5rem;
+}
+
+.pillar-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.pillar-icon {
+    font-size: 1.4rem;
+    color: var(--color-accent);
+    margin-top: 0.2rem;
+}
+
+.pillar-info h3 {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.pillar-info p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+/* Citação de Missão elegante */
+.mission-quote {
+    background-color: var(--color-bg-light);
+    padding: 3rem;
+    border-left: 2px solid var(--color-accent);
+    position: relative;
+}
+
+.mission-quote p {
+    font-family: var(--font-titles);
+    font-size: 1.25rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--color-primary);
+}
+
+.mission-author {
+    display: block;
+    margin-top: 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* 7. COMO FUNCIONA (DESIGN EM BLOCOS ALTERNADOS) */
+.how-it-works {
+    background-color: var(--color-bg-light);
+}
+
+.how-blocks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+/* Alternância de blocos de conteúdo */
+.how-block-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    background-color: var(--color-bg-white);
+    padding: 4rem;
+    border: 1px solid rgba(7, 19, 36, 0.05);
+}
+
+.how-block-row:nth-child(even) {
+    direction: rtl; /* Inverte a ordem no desktop */
+}
+
+.how-block-row:nth-child(even) .how-block-text {
+    direction: ltr; /* Restaura direção do texto */
+}
+
+.how-block-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.how-block-icon {
+    font-size: 2.2rem;
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+}
+
+.how-block-text h3 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.how-block-text p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.how-list-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.how-bullet-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+}
+
+.how-bullet-item i {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+}
+
+.how-block-image-side {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+.how-block-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(10%);
+    transition: var(--transition-custom);
+}
+
+.how-block-row:hover .how-block-image-side img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+/* 8. SEÇÃO ATUAÇÃO - STICKY LAYOUT (NÃO-CARD) */
+.services {
+    background-color: var(--color-primary);
+    color: var(--color-bg-white);
+}
+
+.services .section-subtitle {
+    color: var(--color-accent);
+}
+
+.services-editorial-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 6rem;
+}
+
+/* Coluna Esquerda: Fica Fixada (Sticky) enquanto rola */
+.services-sticky-side {
+    position: sticky;
+    top: 140px;
+    height: fit-content;
+}
+
+.services-sticky-side h2 {
+    color: var(--color-bg-white);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.15;
+}
+
+.services-sticky-side p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.15rem;
+    margin-bottom: 3rem;
+}
+
+/* Coluna Direita: Roda normalmente com linhas de conteúdo elegantes */
+.services-scroll-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-row-item {
+    padding: 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 2rem;
+}
+
+.service-row-item:first-child {
+    padding-top: 0;
+}
+
+.service-row-item:last-child {
+    border-bottom: none;
+}
+
+.service-row-icon {
+    font-size: 1.8rem;
+    color: var(--color-accent);
+    margin-top: 0.2rem;
+}
+
+.service-row-content h3 {
+    color: var(--color-bg-white);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.service-row-content p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* 9. SEÇÃO EDUCATIVA (MURAIS GRÁFICOS) */
+.educational {
+    background-color: var(--color-bg-white);
+}
+
+.edu-editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.edu-editorial-card {
+    border-top: 1px solid var(--color-primary);
+    padding: 3rem 1rem 1rem 1rem;
+    transition: var(--transition-custom);
+}
+
+.edu-editorial-card:hover {
+    border-top-color: var(--color-accent);
+    transform: translateY(-4px);
+}
+
+.edu-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.edu-num {
+    font-family: var(--font-titles);
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    font-style: italic;
+}
+
+.edu-icon-badge {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+
+.edu-editorial-card h3 {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+}
+
+.edu-editorial-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+/* 10. INSTAGRAM (MUSEUM GALLERY GRID) */
+.instagram {
+    background-color: var(--color-bg-light);
+}
+
+.instagram-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.insta-gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    border: 1px solid rgba(7, 19, 36, 0.05);
+}
+
+.insta-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: var(--transition-custom);
+}
+
+.insta-gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 13, 24, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-custom);
+    color: var(--color-bg-white);
+}
+
+.insta-gallery-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.insta-gallery-item:hover .insta-gallery-overlay {
+    opacity: 1;
+}
+
+.insta-gallery-icon {
+    font-size: 1.8rem;
+    color: var(--color-accent);
+}
+
+/* 11. FOOTER EDITORIAL */
+.footer {
+    background-color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 8rem 0 3rem 0;
+    border-top: 1px solid rgba(196, 154, 69, 0.2);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 5rem;
+    margin-bottom: 5rem;
+}
+
+.footer-col h2 {
+    color: var(--color-bg-white);
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.footer-social-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social-btn {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    transition: var(--transition-custom);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-social-btn:hover {
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.footer-col h3 {
+    color: var(--color-bg-white);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.footer-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-links-list a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-links-list a:hover {
+    color: var(--color-accent);
+    padding-left: 4px;
+}
+
+.footer-contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-contact-row-item {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-contact-row-item i {
+    color: var(--color-accent);
+    font-size: 1rem;
+    margin-top: 0.25rem;
+}
+
+.footer-contact-row-item div p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-contact-row-item div strong {
+    color: var(--color-bg-white);
+    font-weight: 500;
+}
+
+/* Selo técnico e regulatório do rodapé */
+.footer-regulatory-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2.5rem 0;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.regulatory-text {
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+.regulatory-text strong {
+    color: var(--color-bg-white);
+}
+
+.regulatory-badge {
+    border: 1px solid rgba(196, 154, 69, 0.3);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* 12. WHATSAPP FLOT / CONTATO */
+.whatsapp-float {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 55px;
+    height: 55px;
+    background-color: var(--color-whatsapp);
+    color: var(--color-bg-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    z-index: 999;
+    cursor: pointer;
+    transition: var(--transition-custom);
+}
+
+.whatsapp-float:hover {
+    background-color: var(--color-whatsapp-hover);
+    transform: scale(1.08) translateY(-4px);
+}
+
+/* 13. REVEAL ANIMATIONS */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+
+
+/* 14. RESPONSIVIDADE (MEDIA QUERIES) */
+
+@media (max-width: 1024px) {
+    .section-padding {
+        padding: 6rem 0;
+    }
+    
+    .section-editorial {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+    
+    .editorial-left {
+        border-left: none;
+        border-top: 2px solid var(--color-accent);
+        padding-left: 0;
+        padding-top: 1.5rem;
+    }
+    
+    .hero-grid {
+        gap: 3rem;
+    }
+    
+    .about-grid {
+        gap: 4rem;
+    }
+    
+    .services-editorial-layout {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .services-sticky-side {
+        position: relative;
+        top: 0;
+    }
+    
+    .how-block-row {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 3rem 2rem;
+    }
+    
+    .how-block-row:nth-child(even) {
+        direction: ltr;
+    }
+    
+    .how-block-row:nth-child(even) .how-block-text {
+        direction: ltr;
+    }
+    
+    .edu-editorial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .instagram-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: var(--color-primary);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.5rem;
+        padding: 3rem;
+        box-shadow: -10px 0 40px rgba(7, 19, 36, 0.3);
+        transition: var(--transition-custom);
+        z-index: 1050;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .mobile-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: var(--color-accent);
+    }
+    
+    .mobile-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+        background-color: var(--color-accent);
+    }
+    
+    .header-cta {
+        display: none;
+    }
+    
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 4rem;
+    }
+    
+    .hero-title {
+        font-size: 2.6rem;
+    }
+    
+    .hero-subtitle {
+        margin-bottom: 2.5rem;
+    }
+    
+    .hero-image-wrapper {
+        justify-content: center;
+    }
+    
+    .hero-main-frame {
+        width: 100%;
+    }
+    
+    .hero-floating-card {
+        left: 20px;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+    
+    .about-image-composition {
+        height: 420px;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .section-padding {
+        padding: 5rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.1rem;
+    }
+    
+    .hero-floating-card {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-top: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .edu-editorial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .instagram-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .whatsapp-float {
+        bottom: 25px;
+        right: 25px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+}
