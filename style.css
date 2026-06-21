@@ -172,7 +172,7 @@ img {
 .btn-secondary {
     background-color: transparent;
     border: 1px solid var(--color-accent);
-    color: var(--color-primary);
+    color:#f6f8f7;
 }
 
 .btn-secondary:hover {
