@@ -171,12 +171,12 @@ img {
 
 .btn-secondary {
     background-color: transparent;
-    border: 1px solid var(--color-accent);
-    color:#f6f8f7;
+    border: 1px solid #0beb7b;
+    color:#0beb7b;
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-accent);
+    background-color:#0d2038;
     color: var(--color-bg-white);
     transform: translateY(-2px);
 }
